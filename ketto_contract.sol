@@ -6,8 +6,15 @@ contract  fundme {
 address public owner;
 
 uint public min_amount;
- address [] public authorized;
+address [] public authorized;
+request []  public requestsarray;
 
+
+modifier onlyadmin{
+
+require(msg.sender== admin);
+-;
+}
 
 constructor (uint min) public {    ///see the constructor  syntax
 owner = msg.sender;
